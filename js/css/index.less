@@ -1,0 +1,152 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.music {
+  margin: 0 auto;
+  max-width: 750px;
+  height: 100%;
+  overflow: hidden;
+  position:relative;
+}
+// 背景图遮罩
+.bg_img,.mantle{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.bg_img{
+  background: url('../img/bg.webp') no-repeat;
+  background-size: 100% 100%;
+  filter: blur(7px);
+  z-index: -2;
+}
+.mantle{
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+// 头部
+.header_box {
+  overflow: hidden;
+  height: 2.1rem;
+  padding:.34rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .info {
+    padding-left:1.62rem;
+    position: relative;
+    .music_name,.name{
+      width: 1.26rem;
+      height: .7rem;
+      line-height: .7rem;
+      text-align: center;
+      color:#fff;
+    }
+    .music_name{
+      font-size: .42rem;
+    }
+    .name{
+      font-size: .37rem;
+    }
+    .header_img {
+      width: 1.4rem;
+      height: 1.4rem;
+      position: absolute;
+      top:0;
+      left:0;
+    }
+  }
+  .music_btn{
+    width: 0.7rem;
+    height: 0.7rem;
+    background: url('../img/music.svg') no-repeat;
+    background-size: 100% 100%;
+    &.move{
+      animation: music_btn_move 1s linear infinite both;
+    }
+  }
+}
+@keyframes music_btn_move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+// 歌词
+.main_box{
+  overflow: hidden;
+  .lyric{
+    margin: .46rem .24rem;
+    color:rgba(255, 255, 255, 0.5);
+    font-size: .36rem;
+    transform: translateY(0px);
+    transition: transform .3s;
+    p{
+      height: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      white-space: nowrap;//禁止自动换行
+      text-overflow: ellipsis;//超出显示省略号
+      &.selected{
+        color: #31C27C;
+      }
+    }
+  }
+}
+// 尾部
+.footer_box{
+  box-sizing: border-box;
+  height: 2.5rem;
+  margin: 0 0.23rem;
+  overflow: hidden;
+  .schedule{
+    height: .92rem;
+    color:rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .start_time,.end_time{
+      width: 1.51rem;
+      height: 0.92rem;
+      line-height: 0.92rem;
+      text-align: center;
+      font-size: .28rem;
+    }
+    .start_time{
+      display: block;
+    }
+    .bar{
+      height: 0.04rem;
+      width: 100%;
+      background:rgba(255, 255, 255, 0.5);
+      .green_bar{
+        background:#31C27C;
+        height: 100%;
+        width: 0;
+      }
+    }
+    .end_time{
+      display: block;
+    }
+  }
+  .download{
+    display: block;
+    width: 5.14rem;
+    height: 1.04rem;
+    line-height: 1.04rem;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 1rem;
+    color:#fff;
+    font-size: .42rem;
+    background: url('../img/sprite_play.png') no-repeat #31C27C;
+    background-size: 1rem 8rem;
+    background-position: .24rem -6.7rem;
+  }
+}

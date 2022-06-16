@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <title>来迟-戴雨彤</title>
+    <script>
+      (function () {
+        let HTML = document.documentElement;
+        const computed = () => {
+          let deviceW = HTML.clientWidth,
+            designW = 750,
+            ratio = 100;
+          ratio = deviceW >= designW ? 100 : (deviceW / designW) * 100;
+          HTML.style.fontSize = `${ratio}px`;
+        };
+        computed();
+        window.addEventListener('resize', computed);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="music">
+      <div class="bg_img"></div>
+      <div class="mantle"></div>
+      <audio src="./img/戴羽彤 - 来迟.mp3" preload="none" class="musicPlay" style="display: none"></audio>
+      <header class="header_box">
+        <div class="info">
+          <h2 class="music_name">来迟</h2>
+          <h3 class="name">戴雨彤</h3>
+          <img src="./img/img.webp" alt="" class="header_img" />
+        </div>
+        <div class="music_btn"></div>
+      </header>
+      <main class="main_box">
+        <div class="lyric">
+          <!-- <p class="selected">来迟-戴雨彤</p> -->
+        </div>
+      </main>
+      <footer class="footer_box">
+        <div class="schedule">
+          <span class="start_time">00:00</span>
+          <div class="bar">
+            <div class="green_bar"></div>
+          </div>
+          <span class="end_time">00:00</span>
+        </div>
+        <a href="" class="download">下载这首音乐</a>
+      </footer>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
